@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="uft-8">
+        <title>Reloj Analógico</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="reloj">
+            <div class="horas">
+                <div class="hr" id="hr"></div>
+            </div>
+            <div class="minutos">
+                <div class="min" id="min"></div>
+            </div>
+            <div class="segundos">
+                <div class="sg" id="sg"> </div>
+            </div>
+        </div>
+        <script type="text/javascript"> 
+             const deg = 6;
+             const hr = document.querySelector('#hr');
+             const min = document.querySelector('#min');
+             const sg = document.querySelector('#sg');
+
+             setInterval (()=> {
+                let day = new Date();
+                let hh = day.getHours() * 30;
+                let mm = day.getMinutes() * deg;
+                let ss = day.getSeconds() * deg;
+                hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+                min.style.transform = `rotateZ(${mm}deg)`;
+                sg.style.transform = `rotateZ(${ss}deg)`;
+             })
+
+        </script>
+    </body>
+</html>

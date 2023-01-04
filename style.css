@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+
+.reloj {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(reloj.png);
+    background-size: cover;
+    border: 10px solid rgba(255, 144, 200, 0.438);
+    border-radius: 50%;
+    box-shadow:  0 -15px 15px rgba(255, 170, 219, 0.05),
+                 inset 0 -15px 15px rgba(255, 170, 219, 0.05), 
+                 0 15px 15px rgba(253, 166, 234, 0.3),
+                 inset 0 15px 15px rgba(253, 166, 234, 0.3);
+transition: all ease 0.2s;
+}
+
+.reloj:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 177, 222, 0.973);
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.reloj .horas,
+.reloj .minutos,
+.reloj .segundos{
+    position: absolute;
+}
+
+.reloj .horas, .hr {
+    width: 160px;
+    height: 160px;
+}
+
+.reloj .minutos, .min {
+    width: 190px;
+    height: 190px;
+}
+
+.reloj .segundos, .sg {
+    width: 230px;
+    height: 230px;
+}
+
+.hr, .min, .sg {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 80px;
+    background: #888888;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.min:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #888888;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sg:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 140px;
+    background: rgba(201, 80, 80, 0.801);
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
