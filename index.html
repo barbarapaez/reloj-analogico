@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="encabezado"> Reloj Analógico</div>
         <div class="reloj">
             <div class="horas">
                 <div class="hr" id="hr"></div>
@@ -17,22 +18,10 @@
                 <div class="sg" id="sg"> </div>
             </div>
         </div>
-        <script type="text/javascript"> 
-             const deg = 6;
-             const hr = document.querySelector('#hr');
-             const min = document.querySelector('#min');
-             const sg = document.querySelector('#sg');
-
-             setInterval (()=> {
-                let dia = new Date();
-                let hh = dia.getHours() * 30;
-                let mm = dia.getMinutes() * deg;
-                let ss = dia.getSeconds() * deg;
-                hr.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-                min.style.transform = `rotateZ(${mm}deg)`;
-                sg.style.transform = `rotateZ(${ss}deg)`;
-             })
-
+        <div class="cambiar-tema"> 
+            <button class="cambiar-btn">Dia</button>
+        </div>
+        <script type="text/javascript" src="script.js">
         </script>
     </body>
 </html>

@@ -1,3 +1,13 @@
+:root {
+    --color-de-fondo-principal: whitesmoke; 
+    --color-de-texto-principal: #888888;
+}
+
+[data-theme = "noche"] {
+    --color-de-fondo-principal: #1e1f26; 
+    --color-de-texto-principal: #ccc;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +15,27 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: whitesmoke;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+    /*importante para que no quede una cosa al lado de la otra ;-) */
+	justify-content: space-between;
+	align-items: center;
+	font-size: 16px;
+	background-color: var(--color-de-fondo-principal);
+	position: relative;
+	transition: all ease 0.2s;
+}
+
+.encabezado {
+    font-size: 2rem;
+	color: var(--color-de-texto-principal);
+    padding: 2rem 0;
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: all ease 0.2;
 }
 
 .reloj {
@@ -18,15 +44,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(reloj.png);
+    background-color: var(--color-de-fondo-principal);
+    background-image: url(reloj.png);
     background-size: cover;
-    border: 10px solid rgba(255, 144, 200, 0.438);
+    border: 12px solid rgba(255, 144, 200, 0.438);
     border-radius: 50%;
     box-shadow:  0 -15px 15px rgba(255, 170, 219, 0.05),
                  inset 0 -15px 15px rgba(255, 170, 219, 0.05), 
                  0 15px 15px rgba(253, 166, 234, 0.3),
                  inset 0 15px 15px rgba(253, 166, 234, 0.3);
 transition: all ease 0.2s;
+
+
 }
 
 .reloj:before {
@@ -34,7 +63,8 @@ transition: all ease 0.2s;
     position: absolute;
     width: 15px;
     height: 15px;
-    background: rgba(255, 177, 222, 0.973);
+    background-color: var(--color-de-texto-principal);
+    border: 2px solid var(--color-de-fondo-principal);
     border-radius: 50%;
     z-index: 10000;
 }
@@ -73,7 +103,7 @@ transition: all ease 0.2s;
     position: absolute;
     width: 6px;
     height: 80px;
-    background: #888888;
+    background-color: var(--color-de-texto-principal);
     z-index: 10;
     border-radius: 6px 6px 0 0;
 }
@@ -83,7 +113,7 @@ transition: all ease 0.2s;
     position: absolute;
     width: 4px;
     height: 90px;
-    background: #888888;
+    background-color: var(--color-de-texto-principal);
     z-index: 11;
     border-radius: 6px 6px 0 0;
 }
@@ -96,4 +126,22 @@ transition: all ease 0.2s;
     background: rgba(201, 80, 80, 0.801);
     z-index: 12;
     border-radius: 6px 6px 0 0;
+}
+
+.cambiar-tema {
+    margin: 2rem auto;
+    bottom: 0;
+}
+
+.cambiar-tema .cambiar-btn {
+	font-family: monospace;
+	text-transform: uppercase;
+	outline: none;
+	padding: 0.5rem 1rem;
+	background-color: var(--color-de-fondo-principal);
+	color: #888888;
+	border: 1px solid #888888;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: all ease 0.3s;
 }
